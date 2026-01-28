@@ -3,7 +3,8 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    environment: "node",
+    environment: "jsdom", // <--- MUDANÇA IMPORTANTE: De 'node' para 'jsdom'
     include: ["tests/**/*.test.js"],
+    globals: true, // Permite usar describe/it/expect sem importar (opcional, mas ajuda)
   },
 });
